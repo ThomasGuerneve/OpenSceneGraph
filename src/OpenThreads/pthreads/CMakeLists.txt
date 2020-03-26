@@ -157,9 +157,11 @@ ELSE()
 
     INSTALL(
         TARGETS OpenThreads
+        EXPORT "${targets_export_name}"
         ARCHIVE DESTINATION lib${LIB_POSTFIX} COMPONENT libopenthreads-dev
         LIBRARY DESTINATION lib${LIB_POSTFIX} COMPONENT libopenthreads
         RUNTIME DESTINATION bin COMPONENT libopenthreads
+        INCLUDES DESTINATION "${include_install_dir}"
     )
 
     IF(NOT OSG_COMPILE_FRAMEWORKS)
